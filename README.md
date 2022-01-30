@@ -1,35 +1,43 @@
-# harmony-flattener
+# truffle-flattener-new
 
-A fork of `truffle-flattener`  
-- `@solidity-parser/parser` version bumped
-- inline comment replacing (`//` -> `/* */`)
+A fork of `truffle-flattener`, `harmony-flattener`
 
+-   `@solidity-parser/parser` version bumped
+-   inline comment replacing (`//` -> `/* */`)
+-   fix `http://` become `http:/*....`
 
-Reason: harmony block explorer verification fails if there is any `//` comment
+Truffle Flattener concats solidity files from Truffle and Buidler projects with all of their dependencies.
 
-[![npm](https://img.shields.io/npm/v/harmony-flattener.svg)](https://www.npmjs.com/package/harmony-flattener)
+Flattener your solidity code can:
 
-Truffle/Harmony Flattener concats solidity files from Truffle and Buidler projects 
-with all of their dependencies.
-
-This tool helps you to verify contracts developed with Truffle and Buidler 
-on [Harmony explorer](https://explorer.harmony.one), Etherscan, or debugging them on
-[Remix](https://remix.ethereum.org), by merging your files and their
-dependencies in the right order.
-
-If you are still using Truffle, we recommend you try [Buidler](https://github.com/nomiclabs/buidler), 
-our Ethereum development environment, which is much faster and flexible.
+-   help you verify your contract on bscscan and ethscan...
+-   use `solcjs` to compile your code
 
 # Installation
 
-`npm install harmony-flattener -g`
+```bash
+yarn add truffle-flattener-new
+#or
+npm install --save truffle-flattener-new
+```
 
 # Usage
 
-Just intall it with npm in your truffle project and run
-`harmony-flattener <solidity-files>`.
+1. use `package.json` scripts, terminal cmd
+
+```
+truffle-flattener <solidity-files>
+```
+
+2. import in other js file
+
+```js
+const flat = require('truffle-flattener-new')
+const res = await flat([filename])
+fs.writeFileSync(filename, res)
+```
 
 # Limitations
 
-Aliased imports (eg: `import {symbol1 as alias, symbol2} from "filename";`) are
-not supported by `truffle-flattener`/`harmony-flattener`.
+Aliased imports (eg: `import {symbol1 as alias, symbol2} from "filename";`) are not supported by
+`truffle-flattener`/`harmony-flattener`.

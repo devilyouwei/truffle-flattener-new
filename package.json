@@ -1,36 +1,36 @@
 {
-  "name": "harmony-flattener",
-  "version": "1.0.1",
-  "description": "[for harmony] Truffle Flattener concats solidity files developed under Truffle with all of their dependencies",
-  "bin": {
-    "harmony-flattener": "index.js"
-  },
-  "scripts": {
-    "test": "mocha tests/tests.js",
-    "prettier": "prettier --write index.js tests/tests.js"
-  },
-  "keywords": [
-    "ethereum",
-    "solidity",
-    "truffle",
-    "smart-contracts",
-    "harmony"
-  ],
-  "homepage": "https://github.com/marscolony-io/harmony-flattener",
-  "repository": "github:marscolony-io/harmony-flattener",
-  "author": "Nomic Labs SRL",
-  "license": "MIT",
-  "dependencies": {
-    "@resolver-engine/imports-fs": "^0.2.2",
-    "@solidity-parser/parser": "^0.14.0",
-    "find-up": "^2.1.0",
-    "mkdirp": "^1.0.4",
-    "tsort": "0.0.1"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^7.0.0",
-    "openzeppelin-solidity": "2.1.2",
-    "prettier": "^1.16.4"
-  }
+    "name": "truffle-flattener-new",
+    "version": "1.0.1",
+    "description": "[new] Truffle Flattener concats solidity files developed under Truffle with all of their dependencies",
+    "bin": {
+        "truffle-flattener": "index.js"
+    },
+    "scripts": {
+        "test": "mocha tests/tests.js",
+        "prettier": "prettier --write index.js tests/tests.js"
+    },
+    "keywords": [
+        "ethereum",
+        "solidity",
+        "truffle",
+        "smart-contracts",
+        "flattener"
+    ],
+    "homepage": "https://github.com/devilyouwei/truffle-flattener-new",
+    "repository": "github:devilyouwei/truffle-flattener-new",
+    "author": "Nomic Labs SRL",
+    "license": "MIT",
+    "dependencies": {
+        "@resolver-engine/imports-fs": "^0.2.2",
+        "@solidity-parser/parser": "^0.14.0",
+        "find-up": "^2.1.0",
+        "mkdirp": "^1.0.4",
+        "tsort": "0.0.1"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^7.0.0",
+        "openzeppelin-solidity": "2.1.2",
+        "prettier": "^1.16.4"
+    }
 }
