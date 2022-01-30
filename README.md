@@ -1,8 +1,15 @@
-# truffle-flattener
+# harmony-flattener
 
-[![npm](https://img.shields.io/npm/v/truffle-flattener.svg)](https://www.npmjs.com/package/truffle-flattener)
+A fork of `truffle-flattener`  
+- `@solidity-parser/parser` version bumped
+- inline comment replacing (`//` -> `/* */`)
 
-Truffle Flattener concats solidity files from Truffle and Buidler projects 
+
+Reason: harmony block explorer verification fails if there is any `//` comment
+
+[![npm](https://img.shields.io/npm/v/truffle-flattener.svg)](https://www.npmjs.com/package/harmony-flattener)
+
+Truffle/Harmony Flattener concats solidity files from Truffle and Buidler projects 
 with all of their dependencies.
 
 This tool helps you to verify contracts developed with Truffle and Buidler 
@@ -15,14 +22,14 @@ our Ethereum development environment, which is much faster and flexible.
 
 # Installation
 
-`npm install truffle-flattener -g`
+`npm install harmony-flattener -g`
 
 # Usage
 
 Just intall it with npm in your truffle project and run
-`truffle-flattener <solidity-files>`.
+`harmony-flattener <solidity-files>`.
 
 # Limitations
 
 Aliased imports (eg: `import {symbol1 as alias, symbol2} from "filename";`) are
-not supported by `truffle-flattener`.
+not supported by `truffle-flattener`/`harmony-flattener`.
