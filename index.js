@@ -12,6 +12,7 @@ const mkdirp = require("mkdirp");
 const Resolver = require("@resolver-engine/imports-fs").ImportsFsEngine;
 
 const IMPORT_SOLIDITY_REGEX = /^\s*import(\s+).*$/gm;
+const INLINE_COMMENT_REGEX = /\/\/(.*)/g;
 
 function unique(array) {
   return [...new Set(array)];
@@ -20,7 +21,7 @@ function unique(array) {
 async function resolve(importPath) {
   const resolver = Resolver();
   const filePath = await resolver.resolve(importPath);
-  const fileContents = fs.readFileSync(filePath).toString();
+  const fileContents = fs.readFileSync(filePath).toString().replace(INLINE_COMMENT_REGEX, "/*$1 */");
   return { fileContents, filePath };
 }
 
@@ -130,7 +131,7 @@ async function printContactenation(files, log) {
   const parts = await Promise.all(
     files.map(async file => {
       return (
-        "/* File: " + file + "*/\n\n" + (await fileContentWithoutImports(file))
+        "/* File: " + file + " */\n\n" + (await fileContentWithoutImports(file))
       );
     })
   );
