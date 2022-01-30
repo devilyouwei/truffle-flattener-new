@@ -21,7 +21,7 @@ function unique(array) {
 async function resolve(importPath) {
   const resolver = Resolver();
   const filePath = await resolver.resolve(importPath);
-  const fileContents = fs.readFileSync(filePath).toString().replace(INLINE_COMMENT_REGEX, "/*$1 */");
+  const fileContents = fs.readFileSync(filePath).toString();
   return { fileContents, filePath };
 }
 
@@ -110,7 +110,7 @@ async function getSortedFilePaths(entryPoints, projectRoot) {
 
 async function fileContentWithoutImports(filePath) {
   const resolved = await resolve(filePath);
-  const output = resolved.fileContents.replace(IMPORT_SOLIDITY_REGEX, "");
+  const output = resolved.fileContents.replace(IMPORT_SOLIDITY_REGEX, "").replace(INLINE_COMMENT_REGEX, "/*$1 */");
 
   // normalize whitespace to a single trailing newline
   return output.trim() + "\n";

@@ -1,6 +1,6 @@
 {
   "name": "harmony-flattener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "[for harmony] Truffle Flattener concats solidity files developed under Truffle with all of their dependencies",
   "bin": {
     "harmony-flattener": "index.js"
