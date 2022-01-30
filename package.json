@@ -1,9 +1,9 @@
 {
-  "name": "truffle-flattener",
-  "version": "1.5.0",
-  "description": "Truffle Flattener concats solidity files developed under Truffle with all of their dependencies",
+  "name": "harmony-flattener",
+  "version": "1.0.0",
+  "description": "[for harmony] Truffle Flattener concats solidity files developed under Truffle with all of their dependencies",
   "bin": {
-    "truffle-flattener": "index.js"
+    "harmony-flattener": "index.js"
   },
   "scripts": {
     "test": "mocha tests/tests.js",
@@ -13,15 +13,16 @@
     "ethereum",
     "solidity",
     "truffle",
-    "smart-contracts"
+    "smart-contracts",
+    "harmony"
   ],
-  "homepage": "https://github.com/nomiclabs/truffle-flattener",
-  "repository": "github:nomiclabs/truffle-flattener",
+  "homepage": "https://github.com/marscolony-io/harmony-flattener",
+  "repository": "github:marscolony-io/harmony-flattener",
   "author": "Nomic Labs SRL",
   "license": "MIT",
   "dependencies": {
     "@resolver-engine/imports-fs": "^0.2.2",
-    "@solidity-parser/parser": "^0.8.0",
+    "@solidity-parser/parser": "^0.14.0",
     "find-up": "^2.1.0",
     "mkdirp": "^1.0.4",
     "tsort": "0.0.1"
