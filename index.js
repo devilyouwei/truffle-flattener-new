@@ -130,7 +130,7 @@ async function printContactenation(files, log) {
   const parts = await Promise.all(
     files.map(async file => {
       return (
-        "// File: " + file + "\n\n" + (await fileContentWithoutImports(file))
+        "/* File: " + file + "*/\n\n" + (await fileContentWithoutImports(file))
       );
     })
   );
@@ -197,7 +197,7 @@ async function main(args) {
 
     if (!outputFilePath) {
       console.warn(
-        "you havn't provided output file path, ignoring. Usage: truffle-flattener <files> --output <output file path>"
+        "you havn't provided output file path, ignoring. Usage: harmony-flattener <files> --output <output file path>"
       );
     }
 
@@ -230,7 +230,7 @@ async function main(args) {
   }
 
   if (!filePaths.length) {
-    console.error("Usage: truffle-flattener <files>");
+    console.error("Usage: harmony-flattener <files>");
     return;
   }
 
